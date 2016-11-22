@@ -26,6 +26,7 @@ class PayGraph:
         if vertex_from == vertex_to:pass
         if (vertex_to not in self.edges[vertex_from]):
             self.edges[vertex_from].append(vertex_to)
+        if (vertex_from not in self.edges[vertex_to]):
             self.edges[vertex_to].append(vertex_from)
             
     def __str__(self):
