@@ -76,13 +76,13 @@ class PayGraph:
         while payer_successor and receiver_successor and degree<=max_allowed_degree:
             payer_successor, payer_visited = self.get_successor(payer_successor, payer_visited)
             if(set(payer_successor).intersection(receiver_successor) and degree<=max_allowed_degree):
-                print(set(payer_successor).intersection(receiver_successor))
+                #print(set(payer_successor).intersection(receiver_successor))
                 return "trusted"
             degree+=1
             
             receiver_successor, receiver_visited = self.get_successor(receiver_successor, receiver_visited)
             if(set(payer_successor).intersection(receiver_successor) and degree<=max_allowed_degree):
-                print(set(payer_successor).intersection(receiver_successor))
+                #print(set(payer_successor).intersection(receiver_successor))
                 return "trusted"
             degree+=1
         return "unverified" 
